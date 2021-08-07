@@ -1,0 +1,41 @@
+<ion-header style="color:rgb(68, 33, 1);">
+  <ion-toolbar style="text-align: center; color:rgb(68, 33, 1);">
+    <ion-title><b>Kahvist</b> Cafe</ion-title>
+  </ion-toolbar>
+  <style>
+    ion-content{
+      --ion-background-color: #8A624A;}
+    
+    ion-card{
+      --ion-background-color: #aaddff;}
+  </style>
+</ion-header>
+
+<ion-content *ngIf="drinks && drinks.items">
+<div style="display: flex; justify-content: center; padding-top: 20px; ">
+    <ion-card
+     style="align-items: center; display: flex; flex-direction: column; cursor: pointer; background-color: #674736;" 
+     *ngFor="let drink of Object.keys(drinks.items)"
+     (click)="openForm(drinks.items[drink])">
+        <ion-card-header>
+          <ion-card-title>{{drinks.items[drink].title}}</ion-card-title>
+        </ion-card-header>
+      
+        <ion-card-content>
+            <app-drink-graphic [drink]="drinks.items[drink]"></app-drink-graphic>
+        </ion-card-content>
+      </ion-card>
+    <ion-card
+     style="opacity: .7; align-items: center; display: flex; flex-direction: column; cursor: pointer; background-color: #674736;" 
+     *ngIf="auth.can('post:drinks')"
+     (click)="openForm()">
+        <ion-card-header>
+          <ion-card-title>Create Drink</ion-card-title>
+        </ion-card-header>
+      
+        <ion-card-content style="color:rgb(68, 33, 1); font-size: 256%;">
+            <ion-icon name="add-circle"></ion-icon>
+        </ion-card-content>
+      </ion-card>
+</div>
+</ion-content>
