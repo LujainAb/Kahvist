@@ -1,4 +1,4 @@
-# Coffee Shop Backend
+# Kahvist - Coffee Shop Backend
 
 ## Getting Started
 
