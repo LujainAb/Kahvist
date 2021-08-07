@@ -1,4 +1,4 @@
-# Coffee Shop Full Stack
+# Kahvist - Coffee Shop Full Stack
 
 ## Full Stack Nano - IAM Final Project
 
